@@ -1,5 +1,6 @@
 ﻿using Polimorfismo.Exer1;
 using Polimorfismo.Exer3;
+using Polimorfismo.Exer4;
 using System.Net.Quic;
 
 namespace Polimorfismo
@@ -18,16 +19,29 @@ namespace Polimorfismo
             //Console.WriteLine("Área do Retângulo: " + AreaRetangulo);
             //Console.WriteLine("Área do Círculo: " + AreaCirculo);
 
-            List<Animal> listAnimal = new List<Animal>();
+            //List<Animal> listAnimal = new List<Animal>();
 
-            listAnimal.Add(new Leao());
-            listAnimal.Add(new Macaco());
-            listAnimal.Add(new Cobra());
+            //listAnimal.Add(new Leao());
+            //listAnimal.Add(new Macaco());
+            //listAnimal.Add(new Cobra());
 
-            foreach (Animal animal in listAnimal)
+            //foreach (Animal animal in listAnimal)
+            //{
+            //    animal.EmitirSom();
+            //}
+
+            List<Inotificacao> listNot = new List<Inotificacao>();
+
+            listNot.Add(new NotificacaoEmail());
+            listNot.Add(new NotificacaoPush());
+            listNot.Add(new NotificacaoSMS());
+            listNot.Add(new Inotificacao());
+
+            foreach (Inotificacao inotificacao in listNot)
             {
-                animal.EmitirSom();
+                inotificacao.Enviar();
             }
+
         }
     }
 }
